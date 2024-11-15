@@ -8,6 +8,10 @@ function ApplyForm() {
     alert("your Form Submited");
     navigate('/')
   }
+  const validateAlpha = (e) => {
+    e.target.value = e.target.value.replace(/[^a-zA-Z\s]/g, "");
+  };
+
   return (
     <>
       <div className="main_apply_area">
@@ -24,6 +28,7 @@ function ApplyForm() {
                     id="first"
                     placeholder="Enter first name"
                     required
+                    onInput={validateAlpha} 
                   />
                 </div>
                 <div class="form_control">
@@ -34,6 +39,7 @@ function ApplyForm() {
                     id="last"
                     placeholder="Enter last name"
                     required
+                    onInput={validateAlpha} 
                   />
                 </div>
                 <div class="form_control">
@@ -44,6 +50,7 @@ function ApplyForm() {
                     id="email"
                     placeholder="Enter email id"
                     required
+                    
                   />
                 </div>
                 <div class="form_control">
@@ -74,6 +81,7 @@ function ApplyForm() {
                     id="city"
                     placeholder="Enter city name"
                     required
+                    onInput={validateAlpha} 
                   />
                 </div>
                 <div class="form_control">
