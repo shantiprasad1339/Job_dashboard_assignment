@@ -38,10 +38,14 @@ function LandingPages() {
     const filtered = jobData.filter((job) =>
       job.location.toLowerCase().includes(term)
     );
-    setFilteredData(filtered); 
-    // console.log(term,filtered);
-    
-  };;
+  
+    if (filtered.length === 0) {
+      alert("Please enter a valid location from the cards.");
+    } else {
+      setFilteredData(filtered);
+    }
+  };
+  
   
 
   return (
